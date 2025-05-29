@@ -18,7 +18,7 @@ jobs:
         
   test:
     needs: build
-    runs-On: windows-latest
+    runs-on: windows-latest
     steps:
       - name: checkout code
         uses: actions/checkout@v4.2.2
