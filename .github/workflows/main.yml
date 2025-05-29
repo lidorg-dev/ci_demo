@@ -1,0 +1,44 @@
+name: lidor-workflow
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout code
+        uses: actions/checkout@v4.2.2
+
+      - name: build code
+        run: |
+              echo "building code now please be quite "
+              sleep 5
+              
+        
+  test:
+    needs: build
+    runs-On: windows-latest
+    steps:
+      - name: checkout code
+        uses: actions/checkout@v4.2.2
+
+      - name: test code
+        run: |
+              echo "Testing code now please be quite "
+              sleep 10
+    
+
+  deploy:
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout code
+        uses: actions/checkout@v4.2.2
+
+      - name: test code
+        run: |
+              echo "Deploying code now please be quite "
+              sleep 10
+    
+  
